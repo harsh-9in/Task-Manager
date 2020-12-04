@@ -5,13 +5,9 @@ from  django.conf import settings
 
 
 class Feed(models.Model):
-      user_profile= models.ForeignKey(
-          settings.AUTH_USER_MODEL,
-          on_delete=models.CASCADE
-
-      )
-
-      text=models.CharField(max_length=255)
+      user_profile= models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+      title=models.CharField(max_length=255)
+      text=models.TextField()
       created_on=models.DateTimeField(auto_now_add=True)
 
       def __str__(self):

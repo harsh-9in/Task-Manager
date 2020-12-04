@@ -6,7 +6,7 @@ from . import models
 class FeedSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Feed
-        fields= ['id','user_profile', 'text', 'created_on']
+        fields= '__all__'
         extra_kwargs={
             'user_profile':{'read_only': True}
         }
