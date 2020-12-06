@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api.apps.ApiConfig',
     'feed.apps.FeedConfig',
+    'workspace.apps.WorkspaceConfig',
 ]
 
 MIDDLEWARE = [
