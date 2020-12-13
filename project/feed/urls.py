@@ -5,7 +5,7 @@ from . import views
 
 
 router=DefaultRouter()
-router.register('feed',views.FeedViewset)
+router.register('feed',views.FeedViewset,basename='feed')
 
 
 
