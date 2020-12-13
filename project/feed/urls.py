@@ -9,6 +9,7 @@ router.register('feed',views.FeedViewset,basename='feed')
 
 
 
+
 urlpatterns = [
     path('',include(router.urls)),
 ]
