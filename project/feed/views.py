@@ -6,8 +6,8 @@ from rest_framework import viewsets
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.authtoken.views import ObtainAuthToken
-from feed.serializers import FeedSerializer
-from feed.models import Feed
+from feed.serializers import FeedSerializer,CardSerializer
+from feed.models import Feed,Cards
 from rest_framework.settings import api_settings
 
 
@@ -20,3 +20,13 @@ class FeedViewset(viewsets.ModelViewSet):
     permission_classes=[UpdateOwnStatus , IsAuthenticated]
     def perform_create(self,serializer):
         serializer.save(user_profile=self.request.user)
+
+
+
+
+class CardViewset(viewsets.ModelViewSet):
+    authentication_classes = (TokenAuthentication,)
+    serializer_class = CardSerializer
+    queryset=Cards.objects.all()
+
+
