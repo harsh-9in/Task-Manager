@@ -6,6 +6,7 @@ from . import views
 
 router=DefaultRouter()
 router.register('feed',views.FeedViewset,basename='feed')
+router.register('card',views.CardViewset,basename='card')
 
 
 
